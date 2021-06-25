@@ -1,0 +1,138 @@
+<br>
+<br>
+<h1>Altia Business Park - TriajeApp</h1>
+<form [formGroup]="form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Barcode</mat-label>
+        <input matInput formControlName="barcode">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>No. Identidad</mat-label>
+        <input matInput formControlName="numId">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Teléfono</mat-label>
+        <input matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-label>Género</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedGender">
+        <mat-radio-button class="example-radio-button" *ngFor="let gender of genderList" [value]="gender">
+            {{gender}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Edad</mat-label>
+        <input matInput formControlName="age">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Empresa</mat-label>
+        <mat-select [formControl]="companyControl" name="company">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let company of companyList" [value]="company.value">
+                {{company.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Edifico</mat-label>
+        <mat-select [formControl]="buildingControl" name="building">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let building of buildingList" [value]="building.value">
+                {{building.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Nivel</mat-label>
+        <mat-select [formControl]="levelControl" name="level">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let level of levelList" [value]="level.value">
+                {{level.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-label>¿Se le entregó Kit de Bienvenida?</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedKit">
+        <mat-radio-button class="example-radio-button" *ngFor="let kit of kitList" [value]="kit">
+            {{kit}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Temperatura Corporal</mat-label>
+        <input matInput formControlName="bodyTemperature">
+    </mat-form-field>
+
+    <mat-label>Alerta de Incapacidad</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedDisability">
+        <mat-radio-button class="example-radio-button" *ngFor="let disability of disabilityList" [value]="disability">
+            {{disability}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-label>¿Es reintegro de incapacidad?</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedDisabilityReinstatement">
+        <mat-radio-button class="example-radio-button"
+            *ngFor="let disabilityReinstatement of disabilityReinstatementList" [value]="disabilityReinstatement">
+            {{disabilityReinstatement}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-label>¿Ha sido incapacitado?</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedDisabilityStatus">
+        <mat-radio-button class="example-radio-button" *ngFor="let disabilityStatus of disabilityStatusList"
+            [value]="disabilityStatus">
+            {{disabilityStatus}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>No. de días de incapacidad</mat-label>
+        <input matInput formControlName="numberOfDisabilityDays">
+    </mat-form-field>
+
+    <mat-label>Causa de incapacidad</mat-label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        formControlName="selectedCauseOfDisability">
+        <mat-radio-button class="example-radio-button" *ngFor="let causeOfDisability of causeOfDisabilityList"
+            [value]="causeOfDisability">
+            {{causeOfDisability}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Causa de sospecha</mat-label>
+        <input matInput formControlName="causeOfSuspicion">
+    </mat-form-field>
+
+
+
+
+</form>
+<br>
+<br>
+
+<mat-card-actions>
+
+
+    <button mat-raised-button color="warn" mattooltip="df" type="submit" style="margin-right: 10px;">
+        <i class='fa fa-times fa-fw'></i> Cancelar
+    </button>
+
+    <button mat-raised-button color="accent" class="marginButton" mattooltip="df" type="submit">
+        <i class='fa fa-save fa-fw'></i> Guardar
+    </button>
+</mat-card-actions>
